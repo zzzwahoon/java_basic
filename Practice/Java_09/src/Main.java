@@ -32,12 +32,40 @@ public class Main {
         Person p1 = new Person();
         Student s1 = new Student();
 
+        Person p2 = new Student();
+//        Student s2 = new Person();
+
+        p1.print();
+        s1.print();
+        s1.print2();
+        p2.print();
+//        p2.print2();
+
+        Person p3 = new CollegeStudent();
+//        CollegeStudent c1 = new Student();
+        p3.print();
 
 
 //      2. 타입 변환
         System.out.println("== 타입 변환 ==");
         Person pp1 = null;
         Student ss1 = null;
+
+        Person pp2 = new Person();
+        Student ss2 = new Student();
+        Person pp3 = new Student(); // 업캐스팅 - 자식 클래스 객체가 부모클래스 타입으로 형변환 된다
+
+        pp1 = pp2;
+        pp1 = ss2;
+
+        ss1 = ss2;
+//        ss1 = pp2;
+        ss1 = (Student) pp3; // 다운캐스팅 - 원래 자기 객체가 부모클래스 타입으로 바뀌었던거를 다시 자신의 클래스 쪽으로 타입변환 한다.
+
+//        CollegeStudent cc1;
+//        CollegeStudent cc2 = new CollegeStudent();
+//        ss1 = (Student) cc2;
+//        cc1 = (CollegeStudent) ss2;
 
 
 
@@ -47,6 +75,23 @@ public class Main {
         Student st1 = new Student();
         Person pe2 = new Student();
         Person pe3 = new CollegeStudent();
+
+        System.out.println(pe1 instanceof Person);
+        System.out.println(pe1 instanceof Student);
+
+        System.out.println(st1 instanceof Person);
+        System.out.println(st1 instanceof Student);
+
+        System.out.println(pe3 instanceof Person);
+        System.out.println(pe3 instanceof CollegeStudent);
+
+        if (pe1 instanceof Student) {
+            Student stu1 = (Student) pe1;
+        }
+
+        if (st1 instanceof Person) {
+            Person per1 = (Person)st1;
+        }
 
 
 
